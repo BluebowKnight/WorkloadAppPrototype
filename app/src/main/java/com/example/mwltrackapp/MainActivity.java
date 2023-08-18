@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.mwltrackapp.Analysis.MWLRatingAnalyzer;
 import com.example.mwltrackapp.Data.DataInfor;
 import com.example.mwltrackapp.Data.DataParser;
 
@@ -38,5 +39,6 @@ public class MainActivity extends AppCompatActivity {
             // 将数据添加到你的 TextView 或其他视图中
             Log.d(TAG, "Data:" + data);
         }
+        MWLRatingAnalyzer.analyzeMWLRatings(ratingEntries);
     }
 }
