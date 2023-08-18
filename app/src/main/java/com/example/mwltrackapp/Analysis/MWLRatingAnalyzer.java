@@ -3,12 +3,13 @@ package com.example.mwltrackapp.Analysis;
 import android.util.Log;
 
 import com.example.mwltrackapp.Data.DataInfor;
-import com.example.mwltrackapp.Data.DataParser;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MWLRatingAnalyzer {
     private static final String TAG = "MWLRatingAnalyzer";
@@ -18,6 +19,7 @@ public class MWLRatingAnalyzer {
         Date startTime = null;
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy HH:mm:ss");
+        Map<String, Double> ratingDurationMap = new HashMap<>();
 
         for (int i = 0; i < ratingEntries.size(); i++) {
             DataInfor currentEntry = ratingEntries.get(i);
@@ -33,8 +35,16 @@ public class MWLRatingAnalyzer {
                             Date currentDate = dateFormat.parse(currentDateStr + " " + currentTimeStr);
                             long durationMillis = currentDate.getTime() - startTime.getTime();
                             double durationHours = (double) durationMillis / (60 * 60 * 1000);
+                            if (ratingDurationMap.containsKey(currentRating)){
+                                double oldvalue = ratingDurationMap.get(currentRating);
+                                double newvalue = oldvalue + durationHours;
+                                ratingDurationMap.put(currentRating,newvalue);
+                            } else {
+                                ratingDurationMap.put(currentRating,durationHours);
+                            }
 
                             Log.d(TAG, "MWL Rating " + currentRating + "; Duration " + String.format("%.2f", durationHours) + "h");
+                            Log.d(TAG, ratingDurationMap.toString());
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }

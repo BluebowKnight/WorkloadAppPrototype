@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             // 将数据添加到你的 TextView 或其他视图中
             Log.d(TAG, "Data:" + data);
         }
+
         MWLRatingAnalyzer.analyzeMWLRatings(ratingEntries);
     }
 }
