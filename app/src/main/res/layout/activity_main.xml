@@ -31,19 +31,17 @@
 
     </LinearLayout>
 
-    <TextView
+    <Button
         android:layout_gravity="center_horizontal"
-
+        android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="这里是日期" />
 
-    <TextView
-
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这里是气泡图"/>
+    <com.github.mikephil.charting.charts.BubbleChart
+        android:id="@+id/bubbleChart"
+        android:layout_width="match_parent"
+        android:layout_height='272dp' />
 
     <View
         android:layout_width="match_parent"
@@ -82,7 +80,79 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这里是Dily Information"/>
+        android:text="Daily Information:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity Duration (Min/Max):" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="hours / hours" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low MWL Time (hours/%):" />
+        <TextView
+            android:id="@+id/low_mwl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="hours / %" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium MWL Time (hours/%):" />
+        <TextView
+            android:id="@+id/medium_mwl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="hours / %"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High MWL Time (hours/%):" />
+        <TextView
+            android:id="@+id/high_mwl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="hours / %" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -103,6 +173,5 @@
             android:layout_height="wrap_content"
             android:text="Select date."/>
     </LinearLayout>
-
-
+    
 </LinearLayout>
