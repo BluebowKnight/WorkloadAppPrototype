@@ -31,18 +31,12 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-        <TextView
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="这里是日期" />
-    </LinearLayout>
+    <TextView
+        android:layout_gravity="center_horizontal"
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这里是日期" />
 
     <TextView
 
@@ -88,6 +82,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="More details:"/>
+        android:text="这里是Dily Information"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compare with"/>
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="@null"
+            android:layout_marginStart="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select date."/>
+    </LinearLayout>
+
 
 </LinearLayout>
